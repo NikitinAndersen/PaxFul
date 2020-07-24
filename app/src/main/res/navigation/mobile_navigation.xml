@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_joke_list">
+
+    <fragment
+        android:id="@+id/nav_joke_list"
+        android:name="com.example.test1.ui.home.JokesFragment"
+        android:label="@string/menu_jokes_list"
+        tools:layout="@layout/fragment_jokes" />
+
+    <fragment
+        android:id="@+id/nav_my_jokes"
+        android:name="com.example.test1.ui.myjokes.MyJokesFragment"
+        android:label="MyJokesFragment"
+        tools:layout="@layout/fragment_my_jokes" >
+
+        <action
+            android:id="@+id/action_nav_my_jokes_to_addJokeDialogFragment"
+            app:destination="@id/addJokeDialogFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.example.test1.ui.settings.SettingsFragment"
+        android:label="@string/menu_settings"
+        tools:layout="@layout/fragment_settings" />
+
+    <dialog
+        android:id="@+id/addJokeDialogFragment"
+        android:name="com.example.test1.ui.myjokes.addjokedialog.AddJokeDialogFragment"
+        android:label="AddJokeDialogFragment" >
+    </dialog>
+
+</navigation>
